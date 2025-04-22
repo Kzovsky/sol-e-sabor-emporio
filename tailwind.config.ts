@@ -52,6 +52,23 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+                gold: {
+                    50: '#FEF9E7',
+                    100: '#FEF2C0',
+                    200: '#FDE598',
+                    300: '#FCD870',
+                    400: '#FBC63F',
+                    500: '#F9D342', // Tom principal
+                    600: '#E8AE10',
+                    700: '#BD8C0A',
+                    800: '#916A07',
+                    900: '#644A05',
+                },
+                sol: {
+                    DEFAULT: '#F9D342', // Amarelo dourado
+                    dark: '#E8AE10',
+                    light: '#FEF2C0',
+                },
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -68,6 +85,10 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+            fontFamily: {
+                playfair: ['Playfair Display', 'serif'],
+                poppins: ['Poppins', 'sans-serif'],
+            },
 			keyframes: {
 				'accordion-down': {
 					from: {
