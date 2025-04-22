@@ -27,7 +27,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Endereço</h4>
-                  <p className="text-muted-foreground">Av. Paulista, 1000<br />São Paulo, SP - CEP 01310-100</p>
+                  <p className="text-muted-foreground">R. 19 de Dezembro, 32 - lj 02 Centro<br />Ibiporã - PR</p>
                 </div>
               </div>
               
@@ -38,10 +38,10 @@ const Contact = () => {
                 <div>
                   <h4 className="font-medium mb-1">Telefone</h4>
                   <a 
-                    href="tel:+551199999999" 
+                    href="tel:+5543991081569" 
                     className="text-muted-foreground hover:text-sol transition-colors"
                   >
-                    (11) 99999-9999
+                    (43) 99108-1569
                   </a>
                 </div>
               </div>
@@ -58,7 +58,7 @@ const Contact = () => {
                     href="mailto:contato@solesabor.com" 
                     className="text-muted-foreground hover:text-sol transition-colors"
                   >
-                    contato@solesabor.com
+                    email@exemplo.com
                   </a>
                 </div>
               </div>
@@ -69,11 +69,11 @@ const Contact = () => {
               <div className="space-y-2">
                 <p className="flex justify-between">
                   <span className="text-muted-foreground">Segunda - Sábado:</span>
-                  <span>9h às 20h</span>
+                  <span>10h às 19h</span>
                 </p>
                 <p className="flex justify-between">
                   <span className="text-muted-foreground">Domingo:</span>
-                  <span>9h às 15h</span>
+                  <span>Fechado</span>
                 </p>
               </div>
             </div>
@@ -82,7 +82,7 @@ const Contact = () => {
           {/* Mapa */}
           <div className="lg:col-span-2 bg-white p-1 rounded-lg shadow-md overflow-hidden h-[450px]">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.098371826354!2d-46.65627022386012!3d-23.563167361307726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1682458562227!5m2!1spt-BR!2sbr" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916.3143162574837!2d-51.047776930447824!3d-23.27009999868758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb471cae469523%3A0x156179441d5bbecf!2sEmp%C3%B3rio%20Minas%20Casa%20Queijos%20e%20Massas!5e0!3m2!1spt-BR!2sbr!4v1745354041151!5m2!1spt-BR!2sbr" 
               width="100%" 
               height="100%" 
               style={{border: 0}} 
@@ -98,10 +98,10 @@ const Contact = () => {
         <div className="text-center mt-12">
           <h3 className="text-xl font-playfair font-bold mb-4">Peça pelo WhatsApp</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-            Para fazer seu pedido ou tirar dúvidas, entre em contato pelo WhatsApp. Atendemos de segunda a sábado, das 9h às 20h.
+            Para fazer seu pedido ou tirar dúvidas, entre em contato pelo WhatsApp. Atendemos de segunda a sábado, das 10h às 19h.
           </p>
           <a 
-            href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20do%20Sol%20e%20Sabor%20Empório."
+            href="https://wa.me/5543991081569?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20do%20Sol%20e%20Sabor%20Empório."
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp inline-flex items-center px-8 py-3"

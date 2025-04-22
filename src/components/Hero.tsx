@@ -28,7 +28,7 @@ const Hero = () => {
               Ver Produtos
             </a>
             <a 
-              href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20do%20Sol%20e%20Sabor%20Empório."
+              href="https://wa.me/5543991081569?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20do%20Sol%20e%20Sabor%20Empório."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary text-center"

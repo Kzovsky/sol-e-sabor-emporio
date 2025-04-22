@@ -13,20 +13,19 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <h1 className="text-2xl font-bold font-playfair">
-              <span className="text-sol">Sol</span> e <span className="text-sol">Sabor</span>
+              <span className="text-sol">Empório</span> Minas<span> Casa</span>
             </h1>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="font-medium hover:text-sol transition-colors">Home</Link>
-            <Link to="/#produtos" className="font-medium hover:text-sol transition-colors">Produtos</Link>
-            <Link to="/#categorias" className="font-medium hover:text-sol transition-colors">Categorias</Link>
-            <Link to="/#sobre" className="font-medium hover:text-sol transition-colors">Sobre Nós</Link>
-            <Link to="/#contato" className="font-medium hover:text-sol transition-colors">Contato</Link>
-          </nav>
-
-          {/* Cart Icon */}
+            <a href="#produtos" className="font-medium hover:text-sol transition-colors">Produtos</a>
+            <a href="#categorias" className="font-medium hover:text-sol transition-colors">Categorias</a>
+            <a href="#sobre" className="font-medium hover:text-sol transition-colors">Sobre Nós</a>
+            <a href="#contato" className="font-medium hover:text-sol transition-colors">Contato</a>
+            </nav>
+                      {/* Cart Icon */}
           <div className="hidden md:flex items-center">
             <button className="p-2 text-black hover:text-sol transition-colors relative">
               <ShoppingCart className="h-6 w-6" />
@@ -48,7 +47,7 @@ const Header = () => {
           <div className="md:hidden py-4">
             <div className="flex flex-col space-y-4">
               <Link to="/" className="font-medium hover:text-sol transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link>
-              <Link to="/#produtos" className="font-medium hover:text-sol transition-colors" onClick={() => setIsMenuOpen(false)}>Produtos</Link>
+              <Link to="/produtos" target="_blank" className="font-medium hover:text-sol transition-colors" onClick={() => setIsMenuOpen(false)}>Produtos</Link>
               <Link to="/#categorias" className="font-medium hover:text-sol transition-colors" onClick={() => setIsMenuOpen(false)}>Categorias</Link>
               <Link to="/#sobre" className="font-medium hover:text-sol transition-colors" onClick={() => setIsMenuOpen(false)}>Sobre Nós</Link>
               <Link to="/#contato" className="font-medium hover:text-sol transition-colors" onClick={() => setIsMenuOpen(false)}>Contato</Link>

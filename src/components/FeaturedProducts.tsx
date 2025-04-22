@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ProductCard from "./ProductCard";
 import { products } from "../data/products";
-
+import { Link } from "react-router-dom";
 const FeaturedProducts = () => {
   const featuredProducts = products.filter(product => product.featured);
   const [visibleProducts, setVisibleProducts] = useState(4);
@@ -17,7 +17,7 @@ const FeaturedProducts = () => {
         <div className="text-center mb-12">
           <h2 className="section-title">Produtos em Destaque</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Conheça nossa seleção exclusiva de produtos gourmet para uma experiência gastronômica única.
+            Conheça nossa seleção exclusiva de produtos especiais para uma experiência gastronômica única.
           </p>
         </div>
 
@@ -36,11 +36,13 @@ const FeaturedProducts = () => {
 
         {visibleProducts < featuredProducts.length && (
           <div className="text-center mt-10">
-            <button 
-              className="btn-primary"
-              onClick={showMore}
-            >
+
+            {/* <button className="btn-primary"onClick={showMore}>
               Ver Mais Produtos
+            </button> */}
+            <button className="btn-primary">
+              <a href=""><Link to="/produtos" target="_blank" className="font-medium">Ver Mais Produtos</Link></a>
+
             </button>
           </div>
         )}

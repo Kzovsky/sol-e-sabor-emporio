@@ -10,7 +10,7 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ id, name, price, image, description }: ProductCardProps) => {
-  const whatsappLink = `https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20comprar%20o%20produto:%20${encodeURIComponent(name)}%20(${id})`;
+  const whatsappLink = `https://wa.me/5543991081569?text=Olá!%20Gostaria%20de%20comprar%20o%20produto:%20${encodeURIComponent(name)}%20(${id})`;
 
   return (
     <div className="product-card group">

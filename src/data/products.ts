@@ -14,7 +14,7 @@ export const products: Product[] = [
     id: "p001",
     name: "Azeite Extra Virgem Premium",
     price: 79.90,
-    image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=2942&auto=format&fit=crop",
+    image: "/imgs/azeite.jpg",
     description: "Azeite extra virgem de primeira prensagem a frio. Acidez máxima de 0,2%, sabor frutado e suave.",
     category: "Azeites e Óleos",
     featured: true
@@ -87,7 +87,7 @@ export const products: Product[] = [
 export const categories = [
   {
     name: "Azeites e Óleos",
-    image: "https://images.unsplash.com/photo-1565999103945-9f12a1488df5?q=80&w=2940&auto=format&fit=crop",
+    image: "/imgs/azeite.jpg",
     count: 8
   },
   {

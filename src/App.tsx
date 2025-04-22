@@ -6,13 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-
+import Produtos from "./pages/Produtos";
 const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
-    // Adicionar título da página
-    document.title = "Sol e Sabor Empório | Produtos Gourmet";
+    document.title = "Empório Minas Casa";
   }, []);
   
   return (
@@ -23,7 +22,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/produtos" element={<Produtos />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
@@ -31,5 +30,10 @@ const App = () => {
     </QueryClientProvider>
   );
 };
+{/* <Routes>
+  <Route path="/" element={<Index />} />
+  <Route path="/produtos" element={<Produtos />} />
+  <Route path="*" element={<NotFound />} />
+</Routes> */}
 
 export default App;
