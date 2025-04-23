@@ -22,7 +22,7 @@ const About = () => {
           
           {/* Texto */}
           <div>
-            <h2 className="section-title text-left">Sobre o Sol e Sabor</h2>
+            <h2 className="section-title text-left">Sobre o Empório Minas</h2>
             <div className="space-y-4">
               <p>
                 Fundado em 2015, o <strong>Sol e Sabor Empório</strong> nasceu da paixão por sabores autênticos e produtos de qualidade. Nossa missão é proporcionar experiências gastronômicas inesquecíveis através de produtos selecionados com dedicação e conhecimento.

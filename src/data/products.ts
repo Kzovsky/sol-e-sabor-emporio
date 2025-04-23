@@ -23,7 +23,7 @@ export const products: Product[] = [
     id: "p002",
     name: "Mel de Lavanda Orgânico",
     price: 45.50,
-    image: "https://images.unsplash.com/photo-1587049352851-8d4e89133924?q=80&w=2787&auto=format&fit=crop",
+    image: "/imgs/mel-silvestre.jpg",
     description: "Mel orgânico de lavanda, colhido em campos naturais. Sabor delicado e aroma floral.",
     category: "Orgânicos",
     featured: true
@@ -32,7 +32,7 @@ export const products: Product[] = [
     id: "p003",
     name: "Vinho Tinto Reserva Especial",
     price: 129.90,
-    image: "https://images.unsplash.com/photo-1516594798947-e65505dbb29d?q=80&w=2940&auto=format&fit=crop",
+    image: "/imgs/16870_1.webp",
     description: "Vinho tinto encorpado com notas de frutas vermelhas e especiarias. Envelhecido em barris de carvalho.",
     category: "Vinhos e Espumantes",
     featured: true
@@ -57,9 +57,9 @@ export const products: Product[] = [
   },
   {
     id: "p006",
-    name: "Café Especial Torrado em Grãos",
+    name: "Café torrado Gourmet",
     price: 49.90,
-    image: "https://images.unsplash.com/photo-1587049352847-4cafc6c8d66f?q=80&w=2787&auto=format&fit=crop",
+    image: "/imgs/2568070_1.jpg",
     description: "Café de origem única, torra média. Notas de chocolate, caramelo e frutas vermelhas.",
     category: "Cafés Especiais",
     featured: true
@@ -81,7 +81,109 @@ export const products: Product[] = [
     description: "Geleia artesanal de frutas vermelhas, baixo teor de açúcar. Perfeita para acompanhar queijos e torradas.",
     category: "Geleias e Conservas",
     featured: false
-  }
+  },
+  {
+    id: "p009",
+    name: "Farinha de Amêndoas Fina",
+    price: 34.90,
+    image: "https://images.unsplash.com/photo-1615484477748-9185cb5099d3?q=80&w=2787",
+    description: "Farinha sem glúten de amêndoas para receitas low-carb.",
+    category: "Grãos e Farinhas",
+    featured: false
+  },
+  {
+    id: "p010",
+    name: "Suco de Uva Integral",
+    price: 19.90,
+    image: "https://images.unsplash.com/photo-1615485145705-7c4e0e5e4f1a?q=80&w=2787",
+    description: "Suco 100% uva, sem adição de açúcar ou conservantes.",
+    category: "Bebidas Naturais",
+    featured: false
+  },
+  {
+    id: "p011",
+    name: "Nozes Chilenas Premium",
+    price: 49.50,
+    image: "https://images.unsplash.com/photo-1604908176831-cd7f73530071?q=80&w=2787",
+    description: "Nozes inteiras, saborosas e crocantes.",
+    category: "Castanhas e Frutas Secas",
+    featured: true
+  },
+  {
+    id: "p012",
+    name: "Bolacha de Arroz Integral",
+    price: 12.90,
+    image: "https://images.unsplash.com/photo-1624378435489-bfd138bfa5b9?q=80&w=2787",
+    description: "Snacks leves, sem glúten e com baixo teor de sódio.",
+    category: "Snacks Saudáveis",
+    featured: false
+  },
+  {
+    id: "p013",
+    name: "Óleo de Coco Extra Virgem",
+    price: 27.90,
+    image: "/imgs/oleo_coco.jpg",
+    description: "Ideal para cozinhar e cuidados com a pele.",
+    category: "Azeites e Óleos",
+    featured: false
+  },
+  {
+    id: "p014",
+    name: "Água com Gás Aromatizada de Limão",
+    price: 6.90,
+    image: "https://images.unsplash.com/photo-1606978681410-84dc2f9c9c62?q=80&w=2787",
+    description: "Água gaseificada com leve sabor de limão natural.",
+    category: "Bebidas Naturais",
+    featured: false
+  },
+  {
+    id: "p015",
+    name: "Granola Crocante com Castanhas",
+    price: 22.90,
+    image: "https://images.unsplash.com/photo-1606755962773-16e44554aa6d?q=80&w=2787",
+    description: "Mix de grãos e castanhas levemente adoçado com mel.",
+    category: "Cereais e Grãos",
+    featured: false
+  },
+  {
+    id: "p016",
+    name: "Vinagre Balsâmico Italiano",
+    price: 39.90,
+    image: "https://images.unsplash.com/photo-1590080877490-3ab697d4c1e7?q=80&w=2787",
+    description: "Envelhecido por 5 anos, ideal para saladas e molhos.",
+    category: "Temperos e Condimentos",
+    featured: true
+  },
+  {
+    id: "p017",
+    name: "Barra de Proteína Vegana",
+    price: 14.50,
+    image: "https://images.unsplash.com/photo-1624378435094-cb626cc8e5b2?q=80&w=2787",
+    description: "Barra rica em proteína vegetal com sabor de cacau.",
+    category: "Snacks Saudáveis",
+    featured: true
+  },
+  {
+    id: "p018",
+    name: "Goiabada Cascão Artesanal",
+    price: 17.90,
+    image: "https://images.unsplash.com/photo-1624204314223-16cc3eb6e4c3?q=80&w=2787",
+    description: "Goiabada firme e caseira, ideal para sobremesas.",
+    category: "Doces e Sobremesas",
+    featured: true
+  },
+  ...Array.from({ length: 20 }, (_, i) => {
+    const baseId = i + 19;
+    return {
+      id: `p${baseId.toString().padStart(3, "0")}`,
+      name: `Produto Gourmet ${baseId}`,
+      price: 20 + i * 3.5,
+      image: `https://source.unsplash.com/300x300/?gourmet,food&sig=${baseId}`,
+      description: `Descrição detalhada do Produto Gourmet ${baseId}.`,
+      category: ["Chocolates", "Queijos", "Massas", "Orgânicos", "Snacks Saudáveis"][i % 5],
+      featured: i % 2 === 0
+    };
+  })
 ];
 
 export const categories = [
@@ -104,5 +206,6 @@ export const categories = [
     name: "Cafés Especiais",
     image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=2787&auto=format&fit=crop",
     count: 6
-  }
+  },
+  
 ];

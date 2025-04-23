@@ -37,18 +37,16 @@ const FeaturedProducts = () => {
         {visibleProducts < featuredProducts.length && (
           <div className="text-center mt-10">
 
-            {/* <button className="btn-primary"onClick={showMore}>
+            <Link to="/produtos"className="btn-primary font-medium">
               Ver Mais Produtos
-            </button> */}
-            <button className="btn-primary">
-              <a href=""><Link to="/produtos" target="_blank" className="font-medium">Ver Mais Produtos</Link></a>
-
-            </button>
+            </Link>
+          
           </div>
         )}
-      </div>
-    </section>
-  );
+      
+        </div>
+      </section>
+    );
 };
 
 export default FeaturedProducts;

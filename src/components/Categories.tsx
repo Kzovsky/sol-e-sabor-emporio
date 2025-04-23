@@ -1,4 +1,7 @@
-
+import { useState } from "react";
+import ProductCard from "./ProductCard";
+import { products } from "../data/products";
+import { Link } from "react-router-dom";
 import CategoryCard from "./CategoryCard";
 import { categories } from "../data/products";
 
@@ -23,6 +26,15 @@ const Categories = () => {
             />
           ))}
         </div>
+                
+                  {/* <div className="text-center mt-10">
+        
+                    <Link to="/produtos" target="_blank" className="btn-primary font-medium">
+                      Ver Mais Produtos
+                    </Link>
+                  
+                  </div> */}
+                
       </div>
     </section>
   );
