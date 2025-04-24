@@ -8,6 +8,9 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Produtos from "./pages/Produtos";
 const queryClient = new QueryClient();
+// import Home from './pages/Home'; 
+import Admin from './pages/Admin';
+
 
 const App = () => {
   useEffect(() => {
@@ -23,6 +26,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/produtos" element={<Produtos />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
