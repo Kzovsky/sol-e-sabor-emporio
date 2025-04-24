@@ -1,17 +1,34 @@
-import { useState } from "react";
-import { products } from "@/data/products";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import ProductCard from "@/components/ProductCard";
-import Header from "@/components/Header"; // ✅ Importação do Header
-
+import Header from "@/components/Header"; 
 const Produtos = () => {
+  const [produtos, setProdutos] = useState<any[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc" | "">("");
-  const [filtered, setFiltered] = useState(products);
+  const [filtered, setFiltered] = useState<any[]>([]);
+  useEffect(() => {
+    setFiltered(produtos);
+  }, [produtos]);
 
+  // Carregar os produtos da API
+  useEffect(() => {
+    const carregarProdutos = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/api/produtos"); // Altere para o seu backend
+        setProdutos(res.data);
+      } catch (error) {
+        console.error("Erro ao carregar os produtos:", error);
+      }
+    };
+    carregarProdutos();
+  }, []);
+
+  // Aplicar filtros
   const applyFilters = () => {
-    let result = [...products];
+    let result = [...produtos];
 
     if (selectedCategory) {
       result = result.filter((p) => p.category === selectedCategory);
@@ -34,7 +51,8 @@ const Produtos = () => {
     setFiltered(result);
   };
 
-  const groupedProducts = filtered.reduce<Record<string, typeof products>>((acc, produto) => {
+  // Agrupar produtos por categoria
+  const groupedProducts = filtered.reduce<Record<string, typeof produtos>>((acc, produto) => {
     if (!acc[produto.category]) acc[produto.category] = [];
     acc[produto.category].push(produto);
     return acc;
@@ -42,7 +60,7 @@ const Produtos = () => {
 
   return (
     <>
-      <Header /> 
+      <Header />
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-6">Todos os Produtos</h1>
@@ -56,7 +74,7 @@ const Produtos = () => {
               className="p-2 rounded border"
             >
               <option value="">Todas as Categorias</option>
-              {Array.from(new Set(products.map((p) => p.category))).map((cat) => (
+              {Array.from(new Set(produtos.map((p) => p.category))).map((cat) => (
                 <option key={cat} value={cat}>
                   {cat}
                 </option>
@@ -102,7 +120,7 @@ const Produtos = () => {
             <h2 className="text-2xl font-bold text-green-800 mb-4">{categoria}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {produtos.map((produto) => (
-                <ProductCard key={produto.id} {...produto} />
+                <ProductCard key={produto._id} {...produto} />
               ))}
             </div>
           </div>
