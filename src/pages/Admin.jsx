@@ -154,27 +154,27 @@ export default function Admin() {
             <option value="+nova">+ Criar nova categoria</option>
           </select>
 
-          {/* Descrição */}
-          <textarea
-            name="description"
-            value={form.description}
-            onChange={handleInput}
-            placeholder="Descrição"
-            className="border rounded p-2 md:col-span-2"
-          />
-        </div>
-
-        {usandoNovaCategoria && (
-          <div className="mb-4">
-            <input
-              type="text"
-              placeholder="Nova categoria"
-              value={novaCategoria}
-              onChange={(e) => setNovaCategoria(e.target.value)}
-              className="border rounded p-2 w-full"
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <textarea
+              name="description"
+              value={form.description}
+              onChange={handleInput}
+              placeholder="Descrição"
+              className="border rounded p-2 w-full resize-none"
+              style={{ resize: "none" }}
             />
+
+            {usandoNovaCategoria && (
+              <input
+                type="text"
+                placeholder="Nova categoria"
+                value={novaCategoria}
+                onChange={(e) => setNovaCategoria(e.target.value)}
+                className="border rounded p-2 w-full"
+              />
+            )}
+          </div> {/* FECHAMENTO CORRETO */}
           </div>
-        )}
 
         {form.image && (
           <div className="mb-4">
@@ -222,7 +222,7 @@ export default function Admin() {
               {editandoId === prod._id ? (
                 <>
                   <input name="name" value={editForm.name} onChange={handleEditInput} className="border rounded p-2 w-full mb-2" />
-                  <input name="description" value={editForm.description} onChange={handleEditInput} className="border rounded p-2 w-full mb-2" />
+                  <input name="description" value={editForm.description} onChange={handleEditInput} className="border rounded p-2 w-full mb-2 resize-none !resize-none" />
                   <input name="price" type="number" value={editForm.price} onChange={handleEditInput} className="border rounded p-2 w-full mb-2" />
                   <input name="image" value={editForm.image} onChange={handleEditInput} className="border rounded p-2 w-full mb-2" />
                   <input name="category" value={editForm.category} onChange={handleEditInput} className="border rounded p-2 w-full mb-2" />

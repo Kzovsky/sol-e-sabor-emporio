@@ -1,11 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
+
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 0%; /* Preto puro para texto */
+    --foreground: 0 0% 0%; /* preto texto */
 
     --card: 0 0% 100%;
     --card-foreground: 0 0% 0%;
@@ -13,16 +13,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 45 93% 62%; /* Amarelo dourado */
+    --primary: 45 93% 62%; /* dourado */
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 0 0% 9%;  /* Quase preto */
+    --secondary: 0 0% 9%;  /* preto */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 45 93% 62%; /* Amarelo dourado */
+    --accent: 45 93% 62%; /* dourado */
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
@@ -130,6 +130,7 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
-html {
-  scroll-behavior: smooth;
-}
+
+    html {
+    scroll-behavior: smooth !important;
+  }

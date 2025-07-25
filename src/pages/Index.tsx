@@ -6,7 +6,6 @@ import About from "../components/About";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -15,12 +14,13 @@ const Index = () => {
         <section id="home">
           <Hero />
         </section>
-        <section id="produtos">
-          <FeaturedProducts />
-        </section>
         <section id="categorias">
           <Categories />
         </section>
+        <section id="produtos">
+          <FeaturedProducts />
+        </section>
+        
         <section id="sobre">
           <About />
         </section>
@@ -33,5 +33,6 @@ const Index = () => {
     </div>
   );
 };
+
 
 export default Index;

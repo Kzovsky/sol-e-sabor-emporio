@@ -12,7 +12,7 @@ const FeaturedProducts = () => {
   };
 
   return (
-    <section id="produtos" className="py-16 bg-white">
+    <section id="produtos" className="py-16 bg-gray-50 scroll-mt-24">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="section-title">Produtos em Destaque</h2>

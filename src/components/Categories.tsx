@@ -7,10 +7,10 @@ import { categories } from "../data/products";
 
 const Categories = () => {
   return (
-    <section id="categorias" className="py-16 bg-gray-50">
+    <section id="categorias" className="py-16 bg-gray-50 ">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="section-title">Nossas Categorias</h2>
+          <h2 className="section-title">Principais Categorias</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Explore nossa variedade de produtos organizados por categorias para facilitar sua experiência de compra.
           </p>
