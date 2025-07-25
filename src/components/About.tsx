@@ -1,4 +1,3 @@
-
 const About = () => {
   return (
     <section id="sobre" className="py-16 bg-white scroll-mt-24">

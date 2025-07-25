@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { Menu, X, ShoppingCart, User } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -111,7 +111,7 @@ const Header = () => {
               Contato
             </a>
           </nav>
-
+          <div className="hidden md:flex items-center gap-2">
           {/* carrinho */}
           <div className="hidden md:flex items-center">
             <button className="p-2 text-black hover:text-sol transition-colors relative">
@@ -121,7 +121,13 @@ const Header = () => {
               </span>
             </button>
           </div>
-
+          {/* user */}
+          <div className="hidden md:flex items-center">
+            <button className="p-2 text-black hover:text-sol transition-colors relative">
+              <User className="h-6 w-6" />
+            </button>
+          </div>
+          </div>
           {/* btn menu mobile */}
           <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -175,6 +181,7 @@ const Header = () => {
                     0
                   </span>
                 </button>
+                <button></button>
               </div>
             </div>
           </div>

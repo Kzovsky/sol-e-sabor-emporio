@@ -237,14 +237,14 @@ export default function Admin() {
                 </>
               ) : (
                 <>
-                  <img src={prod.image} alt={prod.name} className="h-32 object-contain mb-2 rounded" />
+                  <img src={prod.image} alt={prod.name} className="w-full h-40 object-cover mb-2 rounded" />
                   <p className="font-semibold">{prod.name}</p>
                   <p className="text-sm text-gray-600">{prod.description}</p>
                   <p className="text-sm text-gray-700">R$ {Number(prod.price).toFixed(2)}</p>
                   <p className="text-xs text-gray-500">Categoria: {prod.category} | Destaque: {prod.featured ? 'Sim' : 'Não'}</p>
                   <div className="flex gap-2 mt-2">
-                    <button onClick={() => startEditar(prod)} className="bg-yellow-500 hover:bg-yellow-600 text-white px-2 py-1 rounded">Editar</button>
-                    <button onClick={() => excluirProduto(prod._id)} className="bg-red-600 hover:bg-red-700 text-white px-2 py-1 rounded">Excluir</button>
+                    <button onClick={() => startEditar(prod)} className="bg-yellow-500 hover:bg-yellow-600 text-black px-2 py-1 border rounded p-2 w-full mb-2 hover-btn-grey">Editar</button>
+                    <button onClick={() => excluirProduto(prod._id)} className="bg-red-600 hover:bg-red-700 text-black px-2 py-1 border rounded p-2 w-full mb-2 hover-btn-red">Excluir</button>
                   </div>
                 </>
               )}
