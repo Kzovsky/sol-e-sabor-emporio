@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Produtos from "./pages/Produtos";
+import Finish from "./pages/Finish";
 const queryClient = new QueryClient();
 // import Home from './pages/Home'; 
 import Admin from './pages/Admin';
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/produtos" element={<Produtos />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
+            <Route path ="finish" element={<Finish/>} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

@@ -173,7 +173,7 @@ export default function Admin() {
                 className="border rounded p-2 w-full"
               />
             )}
-          </div> {/* FECHAMENTO CORRETO */}
+          </div> 
           </div>
 
         {form.image && (

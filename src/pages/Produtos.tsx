@@ -17,7 +17,7 @@ const Produtos = () => {
   useEffect(() => {
     const carregarProdutos = async () => {
       try {
-        const res = await axios.get("http://172.17.2.159:8080/api/produtos"); // Altere para o seu backend
+        const res = await axios.get("http://192.168.3.68:8080/api/produtos"); // Altere para o seu backend
         setProdutos(res.data);
       } catch (error) {
         console.error("Erro ao carregar os produtos:", error);
