@@ -63,12 +63,12 @@ const Header = () => {
   }, [isOnHome]);
 
   return (
-    <header className="bg-black shadow-sm sticky top-0 z-50">
+    <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container-custom py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
-            <h1 className="text-white text-2xl font-bold font-playfair">
+            <h1 className="text-2xl font-bold font-playfair">
               <span className="text-sol">Empório</span> Minas<span> Casa</span>
             </h1>
           </a>
@@ -77,7 +77,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <a
               href="/"
-              className={`text-white font-medium hover:text-sol transition-colors ${
+              className={`font-medium hover:text-sol transition-colors ${
                 isOnHome && !activeSection ? "text-yellow-500" : ""
               }`}
             >
@@ -86,7 +86,7 @@ const Header = () => {
             <a
               href="#produtos"
               onClick={(e) => handleNavClick(e, "produtos")}
-              className={`text-white font-medium hover:text-sol transition-colors ${
+              className={`font-medium hover:text-sol transition-colors ${
                 activeSection === "produtos" ? "text-yellow-500" : ""
               }`}
             >
@@ -95,7 +95,7 @@ const Header = () => {
             <a
               href="#sobre"
               onClick={(e) => handleNavClick(e, "sobre")}
-              className={`text-white font-medium hover:text-sol transition-colors ${
+              className={`font-medium hover:text-sol transition-colors ${
                 activeSection === "sobre" ? "text-yellow-500" : ""
               }`}
             >
@@ -104,7 +104,7 @@ const Header = () => {
             <a
               href="#contato"
               onClick={(e) => handleNavClick(e, "contato")}
-              className={`text-white font-medium hover:text-sol transition-colors ${
+              className={`font-medium hover:text-sol transition-colors ${
                 activeSection === "contato" ? "text-yellow-500" : ""
               }`}
             >
@@ -114,7 +114,7 @@ const Header = () => {
           <div className="hidden md:flex items-center gap-2">
           {/* carrinho */}
           <div className="hidden md:flex items-center">
-            <button className="p-2 text-white hover:text-sol transition-colors relative">
+            <button className="p-2 text-black hover:text-sol transition-colors relative">
               <ShoppingCart className="h-6 w-6" />
               <span className="absolute -top-1 -right-1 bg-sol text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                 0
@@ -123,7 +123,7 @@ const Header = () => {
           </div>
           {/* user */}
           <div className="hidden md:flex items-center">
-            <button className="p-2 text-white hover:text-sol transition-colors relative">
+            <button className="p-2 text-black hover:text-sol transition-colors relative">
               <User className="h-6 w-6" />
             </button>
           </div>
