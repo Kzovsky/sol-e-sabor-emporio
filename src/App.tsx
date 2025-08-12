@@ -7,9 +7,12 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Produtos from "./pages/Produtos";
-import Finish from "./pages/Finish";
+import Finish from "./pages/cart";
 import UserInfo from "./pages/UserInfo"
 import Confirmation from "./pages/Confirmation";
+import Login from "./pages/Login";
+import Register from "./pages/register";
+import Cart from "./pages/cart";
 const queryClient = new QueryClient();
 // import Home from './pages/Home'; 
 import Admin from './pages/Admin';
@@ -31,9 +34,11 @@ const App = () => {
             <Route path="/produtos" element={<Produtos />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
-            <Route path="/finish" element={<Finish />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/userInfo" element={<UserInfo />} />
             <Route path="/confirmation" element={<Confirmation />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

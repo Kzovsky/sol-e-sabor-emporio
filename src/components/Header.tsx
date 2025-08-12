@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import { Menu, X, ShoppingCart, User } from "lucide-react";
 
 const Header = () => {
@@ -114,12 +114,16 @@ const Header = () => {
           <div className="hidden md:flex items-center gap-2">
           {/* carrinho */}
           <div className="hidden md:flex items-center">
+            <Link to="/cart">
+                        
             <button className="p-2 text-white hover:text-sol transition-colors relative">
               <ShoppingCart className="h-6 w-6" />
               <span className="absolute -top-1 -right-1 bg-sol text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                 0
               </span>
-            </button>
+              </button>
+            </Link>
+            
           </div>
           {/* user */}
           <div className="hidden md:flex items-center">
