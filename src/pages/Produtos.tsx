@@ -9,6 +9,33 @@ const Produtos = () => {
   const [maxPrice, setMaxPrice] = useState("");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc" | "">("");
   const [filtered, setFiltered] = useState<any[]>([]);
+  const token = localStorage.getItem("token");
+
+const addToCart = async (productId: string) => {
+  try {
+    await axios.post(
+      "http://172.17.2.159:8080/api/cart/add",
+      { productId, quantity: 1 },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+    alert("Produto adicionado ao carrinho!");
+  } catch (error) {
+    console.error("Erro ao adicionar:", error);
+  }
+};
+
+const removeFromCart = async (productId: string) => {
+  try {
+    await axios.post(
+      "http://172.17.2.159:8080/api/cart/remove",
+      { productId },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+    alert("Produto removido do carrinho!");
+  } catch (error) {
+    console.error("Erro ao remover:", error);
+  }
+};
   useEffect(() => {
     setFiltered(produtos);
   }, [produtos]);
@@ -120,7 +147,15 @@ const Produtos = () => {
             <h2 className="text-2xl font-bold text-green-800 mb-4">{categoria}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {produtos.map((produto) => (
-                <ProductCard key={produto._id} {...produto} />
+  <div key={produto._id}>
+    <ProductCard {...produto} />
+    <button
+      onClick={() => addToCart(produto._id)}
+      className="bg-blue-600 text-white px-3 py-1 rounded mt-2"
+    >
+      Adicionar ao Carrinho
+    </button>
+  </div>
               ))}
             </div>
           </div>

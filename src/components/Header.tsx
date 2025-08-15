@@ -127,10 +127,12 @@ const Header = () => {
           </div>
           {/* user */}
           <div className="hidden md:flex items-center">
-            <button className="p-2 text-white hover:text-sol transition-colors relative">
-              <User className="h-6 w-6" />
-            </button>
-          </div>
+            <Link to="/login">
+              <button className="p-2 text-white hover:text-sol transition-colors relative">
+                <User className="h-6 w-6" />
+              </button>
+            </Link>
+            </div>
           </div>
           {/* btn menu mobile */}
           <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>

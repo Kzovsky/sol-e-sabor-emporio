@@ -64,12 +64,12 @@ ${cliente.entrega ? `Endereço: ${cliente.endereco}, ${cliente.cidade} - ${clien
   };
 
   return (
-    <div className="min-h-screen bg-muted/30 text-foreground margin">
+    <div className="min-h-screen bg-muted/30 text-foreground">
       <Header />
 
       <div className="container-custom py-10">
         {/* LINHA DO TEMPO */}
-        <div className="flex justify-between items-center mb-10 max-w-3xl mx-auto margin-2-2">
+        <div className="flex justify-between items-center mb-10 max-w-3xl mx-auto">
           {steps.map((step, index) => (
             <div key={index} className="flex-1 text-center">
               <div
@@ -233,7 +233,12 @@ ${cliente.entrega ? `Endereço: ${cliente.endereco}, ${cliente.cidade} - ${clien
               </div>
             </div>
 
-
+            <button
+              onClick={handleNext}
+              className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-md"
+            >
+              Próximo
+            </button>
           </div>
         )}
 
@@ -296,11 +301,11 @@ ${cliente.entrega ? `Endereço: ${cliente.endereco}, ${cliente.cidade} - ${clien
         )}
 
         {/* NAVEGAÇÃO GERAL */}
-        <div className="flex justify-between mt-10 max-w-3xl mx-auto margin-2-2">
+        <div className="flex justify-between mt-10 max-w-3xl mx-auto">
           <button
             onClick={handleBack}
             disabled={currentStep === 0}
-            className="px-4 py-2 bg-blue-300 text-black rounded-md disabled:opacity-50"
+            className="px-4 py-2 bg-gray-300 text-black rounded-md disabled:opacity-50"
           >
             Voltar
           </button>

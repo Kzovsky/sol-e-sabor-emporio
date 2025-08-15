@@ -17,7 +17,7 @@ const Register = () => {
     setCarregando(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
+      const response = await axios.post('http://172.17.2.159:8080/api/auth/register', {
         nome: nome + ' ' + sobrenome,
         telefone,
         senha
@@ -95,7 +95,14 @@ const Register = () => {
         >
           {carregando ? 'Registrando...' : 'Registrar'}
         </button>
+                <p className="mt-4 text-center">
+            Já tem uma conta?{' '}
+            <a href="/login" className="text-blue-600 hover:underline">
+            Entrar
+            </a>
+        </p>
       </form>
+
     </div>
   );
 };

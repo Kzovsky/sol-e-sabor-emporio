@@ -1,62 +1,55 @@
-import { useState } from 'react';
-import axios from 'axios';
+import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
-const Login = () => {
-  const [telefone, setTelefone] = useState('');
-  const [senha, setSenha] = useState('');
-  const [erro, setErro] = useState('');
-  const [sucesso, setSucesso] = useState('');
-  const [carregando, setCarregando] = useState(false);
+export default function Login() {
+  const [telefone, setTelefone] = useState("");
+  const [senha, setSenha] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    setErro('');
-    setSucesso('');
-    setCarregando(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
-        telefone,
-        senha
+      const res = await fetch("http://172.17.2.159:8080/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ telefone, senha }),
       });
 
-      const { token, nome } = response.data;
-      localStorage.setItem('token', token);
-      localStorage.setItem('nome', nome);
+      const data = await res.json();
 
-      setSucesso('Login realizado com sucesso!');
-    } catch (err: any) {
-      setErro(err.response?.data?.error || 'Erro ao fazer login.');
-    } finally {
-      setCarregando(false);
+      if (!res.ok) {
+        alert(data.error || "Erro no login");
+        return;
+      }
+
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("nome", data.nome);
+
+      const redirectTo = location.state?.from?.pathname || "/";
+      navigate(redirectTo, { replace: true });
+    } catch (error) {
+      console.error(error);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4 relative">
-      
-      {/* AVISO SUCESSO - TOPO FIXO */}
-      {sucesso && (
-        <div className="absolute top-5 w-full flex justify-center z-50">
-          <div className="bg-green-100 border border-green-400 text-green-700 px-6 py-3 rounded shadow aviso-sucesso">
-            {sucesso}
-          </div>
-        </div>
-      )}
-
-      {/* FORMULÁRIO */}
-      <form onSubmit={handleLogin} className="bg-white p-8 rounded-2xl shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
-
-        {erro && <div className="bg-red-100 text-red-700 p-2 mb-4 rounded">{erro}</div>}
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+      <form
+        onSubmit={handleLogin}
+        className="bg-white p-8 rounded-2xl shadow-md w-full max-w-md"
+      >
+        <h2 className="text-2xl font-bold mb-6 text-center">Entrar</h2>
 
         <div className="mb-4">
           <label className="block text-gray-700 mb-1">Telefone</label>
           <input
-            type="tel"
-            className="w-full p-2 border border-gray-300 rounded"
+            type="text"
+            placeholder="Digite seu telefone"
             value={telefone}
             onChange={(e) => setTelefone(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded"
             required
           />
         </div>
@@ -65,23 +58,27 @@ const Login = () => {
           <label className="block text-gray-700 mb-1">Senha</label>
           <input
             type="password"
-            className="w-full p-2 border border-gray-300 rounded"
+            placeholder="Digite sua senha"
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded"
             required
           />
         </div>
 
         <button
           type="submit"
-          disabled={carregando}
           className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
-          {carregando ? 'Entrando...' : 'Entrar'}
+          Entrar
         </button>
+        <p className="mt-4 text-center">
+          Não tem uma conta?{" "}
+          <a href="/register" className="text-blue-600 hover:underline">
+            Registrar-se
+          </a>
+        </p>
       </form>
     </div>
   );
-};
-
-export default Login;
+}
